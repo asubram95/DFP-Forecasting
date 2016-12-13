@@ -7,6 +7,8 @@
 #devtools::install_github("HenrikBengtsson/devtools@hotfix/parse_deps")
 #devtools::install_github("google/CausalImpact")
 
+PARTNER <- 'AMI'
+
 libraries <- c(
   'devtools',
   'dtw',
@@ -89,5 +91,8 @@ dfp_results <- read.csv('DFPresults.csv', header = TRUE, sep = ",", stringsAsFac
 dfp_partner_results <- dfp_results %>%
   select(Dimension.DATE, Dimension.PARTNER_MANAGEMENT_PARTNER_NAME, Column.PARTNER_MANAGEMENT_HOST_IMPRESSIONS) %>%
   mutate(Dimension.DATE = as.Date(Dimension.DATE)) %>%
-  filter(Dimension.PARTNER_MANAGEMENT_PARTNER_NAME == "AMI")
+  filter(Dimension.PARTNER_MANAGEMENT_PARTNER_NAME == PARTNER)
+
+View(dfp_results)
+View(dfp_partner_results)
 
