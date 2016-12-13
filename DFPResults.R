@@ -12,7 +12,6 @@ libraries <- c(
   'dtw',
   'stringi',
   'lubridate',
-  'dplyr',
   'reshape2',
   'ggplot2',
   'httr',
@@ -20,7 +19,8 @@ libraries <- c(
   'forecast',
   'bsts',
   'CausalImpact',
-  'dygraphs'
+  'dygraphs',
+  'dplyr'
 )
 
 #Install/load required libraries
@@ -29,6 +29,7 @@ for (lib in libraries) {
     install.packages(lib)
   library(lib, character.only = TRUE)
 }
+
 
 options(rdfp.network_code = "98790044")
 options(rdfp.application_name = "DFP4CAST")
@@ -52,11 +53,11 @@ job_request <-
   list(reportJob = list(
     reportQuery = list(
       dimensions = 'DATE',
-      dimensions = 'PARTNER_NAME',
-      dimensions = 'PARTNER_ID',
+      dimensions = 'PARTNER_MANAGEMENT_PARTNER_NAME',
+      dimensions = 'PARTNER_MANAGEMENT_PARTNER_ID',
       columns = 'PARTNER_MANAGEMENT_HOST_IMPRESSIONS',
-      columns = 'HOST_CLICKS',
-      columns = 'HOST_REVENUE',
+      columns = 'PARTNER_MANAGEMENT_HOST_CLICKS',
+      columns = 'PARTNER_MANAGEMENT_HOST_REVENUE',
       startDate = list(year = 2015, month = 09, day = 11),
       endDate = list(year = 2016, month = 07, day = 31),
       dateRangeType = 'CUSTOM_DATE'
@@ -84,11 +85,9 @@ dfp_getReportDownloadURL_result <- dfp_getReportDownloadURL(file_request)
 download.file(as.character(dfp_getReportDownloadURL_result), destfile = "DFPresults.csv")
 dfp_results <- read.csv('DFPresults.csv', header = TRUE, sep = ",", stringsAsFactors = FALSE)
 
-#Convert to data frame, filter by partner
+#Filter by partner
 dfp_partner_results <- dfp_results %>%
-  select(Dimension.DATE,
-         Dimension.PARTNER_NAME,
-         Column.HOST_IMPRESSIONS) %>%
+  select(Dimension.DATE, Dimension.PARTNER_MANAGEMENT_PARTNER_NAME, Column.PARTNER_MANAGEMENT_HOST_IMPRESSIONS) %>%
   mutate(Dimension.DATE = as.Date(Dimension.DATE)) %>%
-  filter(Dimension.PARTNER_NAME == "AMI")
+  filter(Dimension.PARTNER_MANAGEMENT_PARTNER_NAME == "AMI")
 
