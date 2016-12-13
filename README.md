@@ -6,7 +6,8 @@ Forecasting models for better DFP projections.
 2. Look at inventory forecasting for each individual partner
 
 * DFP provides this, using aggregated moving averages
-..* DFP only provides up to 120 days; can we do more?
+
+* DFP only provides up to 120 days; can we do more?
 		⁃	Compare fast moving averages vs slow moving averages
 
 	▪	Start by examining publisher by publisher, then generalize to site by site, then generalize to actual placements
