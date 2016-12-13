@@ -2,7 +2,7 @@
 Forecasting models for better DFP projections.
 
 ##Steps
-+ Examine possible correlation between supposedly independent publishers using correlation analysis
++ **Examine possible correlation between supposedly independent publishers using correlation analysis**
 
 + Look at inventory forecasting for each individual partner
   * DFP provides this, using aggregated moving averages
