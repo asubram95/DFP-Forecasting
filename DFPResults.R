@@ -92,12 +92,3 @@ dfp_partner_results <- dfp_results %>%
   mutate(Dimension.DATE = as.Date(Dimension.DATE)) %>%
   filter(Dimension.PARTNER_NAME == "AMI")
 
-#ts() creates a time series object
-myts <- ts(dfp_partner_date2[,3], start=c(2015,9,11), end=c(2016,7,31), frequency = 325)
-
-onyData <- dfp_partner_date2[,c(1,3)]
-
-plot(forecast(fit,h=20))
-
-
-hehexd
