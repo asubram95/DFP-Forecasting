@@ -5,9 +5,9 @@ Forecasting models for better DFP projections.
 + Examine possible correlation between supposedly independent publishers using correlation analysis
 
 + Look at inventory forecasting for each individual partner
-..+ DFP provides this, using aggregated moving averages
-..* DFP only provides up to 120 days; can we do more?
-..* Compare fast moving averages vs slow moving averages
+  * DFP provides this, using aggregated moving averages
+  * DFP only provides up to 120 days; can we do more?
+  * Compare fast moving averages vs slow moving averages
 
 + Start by examining publisher by publisher, then generalize to site by site, then generalize to actual placements
 
