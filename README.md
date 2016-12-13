@@ -21,7 +21,7 @@ Forecasting models for better DFP projections.
 + Holt-Winters time scale model
   * Time scale model that uses exponential smoothing
 
-+ There are different types of moving averages functions used for prediction
++ Consider different types of moving averages functions
   * MOMA - Mother Of all Moving Averages
 
 + Causal impact
