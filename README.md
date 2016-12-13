@@ -12,8 +12,8 @@ Forecasting models for better DFP projections.
 + Start by examining publisher by publisher, then generalize to site by site, then generalize to actual placements
 
 + Tweak models to look for trends, and then use that as a cutoff point to forecast
-..* Reduces margin of error
-..* Prevents skewing from times with little to no activity (flatline areas)
+  * Reduces margin of error
+  * Prevents skewing from times with little to no activity (flatline areas)
 
 ##Notes
 	▪	Look for seasonality
