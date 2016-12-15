@@ -15,7 +15,11 @@ partners <- unique(dfp_results$Dimension.PARTNER_MANAGEMENT_PARTNER_NAME)
 #Build time series of impressions
 
 #Function to extract impression column for each partner
+<<<<<<< HEAD
 get.imps <- function(x){
+=======
+get.impressions <- function(x){
+>>>>>>> f384a107d252f46fd900f3b6593d5ae9e00383a5
   p1 <- dfp_results %>%
   select(Dimension.DATE, Dimension.PARTNER_MANAGEMENT_PARTNER_NAME, Column.PARTNER_MANAGEMENT_HOST_IMPRESSIONS) %>%
   filter(Dimension.PARTNER_MANAGEMENT_PARTNER_NAME == x)
@@ -31,6 +35,7 @@ imp_zoo <- lapply(lapply(partners, get.imps), read.zoo)
 imp_series <- data.frame()
 for(imp in imp_zoo){
   suppressWarnings(
+<<<<<<< HEAD
     imp_series <- merge.zoo(imp_series, imp))
 }
 colnames(imp_series) <- partners
@@ -56,6 +61,9 @@ cor.mtest <- function(mat, conf.level = 0.95){
     }
   }
   return(list(p.mat, lowCI.mat, uppCI.mat))
+=======
+    impression_series <- merge.zoo(impression_series, animal))
+>>>>>>> f384a107d252f46fd900f3b6593d5ae9e00383a5
 }
 
 #Corrplot
@@ -105,3 +113,9 @@ corrplot(cor(imp_weekly),
          tl.cex=.5)
 
 
+<<<<<<< HEAD
+=======
+  
+#Correlation between supposedly independent partners
+cor(partner_corr[,2], partner_corr[,3])
+>>>>>>> f384a107d252f46fd900f3b6593d5ae9e00383a5
