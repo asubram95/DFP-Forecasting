@@ -29,8 +29,7 @@ imp_list_zoo <- lapply(lapply(partners, get.impressions), read.zoo)
 impression_series <- data.frame()
 for(animal in imp_list_zoo){
   suppressWarnings(
-    impression_series <- merge.zoo(impression_series, animal)
-    )
+    impression_series <- merge.zoo(impression_series, animal))
 }
 colnames(impression_series) <- partners
 index(impression_series) <- as.Date(index(impression_series))
