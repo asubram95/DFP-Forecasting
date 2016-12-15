@@ -60,7 +60,7 @@ job_request <-
       columns = 'PARTNER_MANAGEMENT_HOST_IMPRESSIONS',
       columns = 'PARTNER_MANAGEMENT_HOST_CLICKS',
       columns = 'PARTNER_MANAGEMENT_HOST_REVENUE',
-      startDate = list(year = 2015, month = 09, day = 11),
+      startDate = list(year = 2015, month = 01, day = 01),
       endDate = list(year = 2016, month = 07, day = 31),
       dateRangeType = 'CUSTOM_DATE'
     )
