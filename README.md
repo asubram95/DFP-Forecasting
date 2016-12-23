@@ -16,4 +16,4 @@ Forecasting models for better DFP projections.
 + Examine possible causes of the strong correlations that were found by 
   * examining the site level 
   * correlating changes in the time series to campaign starts and ends
-  * correlating changes in the time series to significant events, e.g. the 2016 election 
+  * correlating changes in the time series to significant events, e.g. the 2016 election
