@@ -11,3 +11,9 @@ Forecasting models for better DFP projections.
   * ensemble_results is a list of graphs that shows the best method for each of the top 25 partners
   
 ##Next Steps
+
++ ForecastEnsemble only gives the best forecast method. We need to actually run those best forecasts and then compare them to the DFP forecasts using some metric of error, e.g. causal impact
++ Examine possible causes of the strong correlations that were found by 
+  * examining the site level 
+  * correlating changes in the time series to campaign starts and ends
+  * correlating changes in the time series to significant events, e.g. the 2016 election
